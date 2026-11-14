@@ -38,6 +38,10 @@
       try { await navigator.clipboard.writeText(code); document.getElementById("copy").textContent = "Copied"; }
       catch (e) { document.getElementById("copy").textContent = "Select and copy it manually"; }
     };
+  } else if (!q.get("error")) {
+    document.getElementById("err").hidden = false;
+    document.querySelector("#err p").textContent =
+      "Nothing to do here yet. TikTok sends you to this page after you approve the uploader's login, and the code will show up then.";
   } else {
     document.getElementById("err").hidden = false;
     document.getElementById("errmsg").textContent =
